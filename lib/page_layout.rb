@@ -9,7 +9,6 @@ module PageLayout
   autoload :Model
   
   mattr_accessor :path
-  @@path = Rails.root.join("app","pages","*.rb")
   
   mattr_accessor :pages
   @@pages = {}
@@ -35,4 +34,10 @@ module PageLayout
     pages
   end
   
+  
+  def self.setup!
+    @@path = Rails.root.join("app","pages","*.rb")
+  end
 end
+
+require "page_layout/railtie"
