@@ -15,7 +15,9 @@ module PageLayout
     
     
     included do
-      attr_accessible :page_layout_attributes
+      if Gem::Requirement.new('< 4.0').satisfied_by?(Gem::Version.new(Rails.version.to_s))
+        attr_accessible :page_layout_attributes
+      end
       has_one :page_layout, class_name: 'PageLayout::Model'
       accepts_nested_attributes_for :page_layout
       def page_layout_attributes= hash

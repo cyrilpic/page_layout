@@ -1,5 +1,5 @@
 module PageLayout
-  class Railtie < Rails::Railtie
+  class Engine < Rails::Engine
     config.to_prepare do
       PageLayout.setup!
     end

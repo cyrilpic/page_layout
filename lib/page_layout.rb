@@ -40,4 +40,4 @@ module PageLayout
   end
 end
 
-require "page_layout/railtie"
+require "page_layout/engine"
