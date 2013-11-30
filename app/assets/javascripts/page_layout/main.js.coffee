@@ -1,2 +1,2 @@
-#= handlebars
-#= jquery.watch
+#= require handlebars
+#= require jquery.watch
