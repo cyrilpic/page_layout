@@ -20,7 +20,7 @@ module PageLayout
     
     def parse(body)
       params = {}
-      body.gsub!(/<% content_for :(?<key>[a-z0-9_]+) do %>\n(?<content>.+)\n<% end #content_\k<key> %>\n/m) do |match|
+      body.gsub!(/<% content_for :(?<key>[a-z0-9_]+) do %>\r\n|\r|\n(?<content>.+)\r\n|\r|\n<% end #content_\k<key> %>\r\n|\r|\n/m) do |match|
         params[$1.to_sym] = $2
         ""
       end
